@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(8),
   },
   paper: {
-    height: 510,
+    height: 520,
     width: 380,
     padding: 6,
     display: "flex",
@@ -25,17 +25,18 @@ const useStyles = makeStyles((theme) => ({
   },
   descriptor: {
     padding: 10,
+    margin: theme.spacing(1),
   },
   button: {
-    margin: theme.spacing(2),
+    marginTop: theme.spacing(1)
   },
   textField: {
-    margin: theme.spacing(2),
-    width: 200,
+    width: 300,
+    marginBottom: theme.spacing(3)
   },
   formControl: {
     margin: theme.spacing(2),
-    minWidth: 170,
+    minWidth: 280,
   },
 }));
 

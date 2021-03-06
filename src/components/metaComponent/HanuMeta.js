@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(8),
   },
   paper: {
-    height: 540,
+    height: 620,
     width: 600,
     padding: 40,
     display: "flex",
@@ -28,13 +28,14 @@ const useStyles = makeStyles((theme) => ({
   form: {
     width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(3),
+    padding: 10,
   },
   submit: {
     margin: theme.spacing(6, 0, 2),
   },
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 120,
+    minWidth: 270,
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
@@ -43,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    width: 600,
+    width: 650,
     color: green[500],
   },
 }));
@@ -98,6 +99,7 @@ const HanuMeta = (props) => {
         TemplateName: templateName,
         SupportHtml: supportHTML,
         SalaryBanding: salaryBanding,
+        ContentType: "email",
         Email: email,
       };
       props.onHandleFinalMetaChange(data);
@@ -115,7 +117,7 @@ const HanuMeta = (props) => {
               Meta
             </Typography>
             <form className={classes.form} noValidate onSubmit={handleSubmit}>
-              <Grid container spacing={2}>
+              <Grid container spacing={4}>
                 <Grid item xs={12} sm={6}>
                   <TextField
                     name="jira-Ticket"
@@ -176,7 +178,7 @@ const HanuMeta = (props) => {
                       onChange={handleHtmlSupportChange}
                     >
                       <MenuItem value={"yes"}>Yes</MenuItem>
-                      <MenuItem value={"No"}>No</MenuItem>
+                      <MenuItem value={"no"}>No</MenuItem>
                     </Select>
                   </FormControl>
                 </Grid>
@@ -209,8 +211,8 @@ const HanuMeta = (props) => {
                 </Grid>
                 <Grid item xs={12}>
                   <Button
-                    type="submit"
                     fullWidth
+                    type="submit"
                     variant="contained"
                     color="primary"
                     className={classes.submit}

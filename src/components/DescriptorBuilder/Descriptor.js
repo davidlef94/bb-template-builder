@@ -6,6 +6,8 @@ import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import Button from "@material-ui/core/Button";
+import AddTwoToneIcon from '@material-ui/icons/AddTwoTone';
+import BuildIcon from '@material-ui/icons/Build';
 import { v4 as uuidv4 } from "uuid";
 
 import Descriptors from "./data/Descriptors";
@@ -128,6 +130,7 @@ const Descriptor = (props) => {
               <Button
                 variant="contained"
                 color="primary"
+                startIcon={<AddTwoToneIcon />}
                 onClick={handleAddDescriptorToDisplay}
               >
                 Add
@@ -247,15 +250,15 @@ const Descriptor = (props) => {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item xs={12}>
+      <Grid>
         <div className={classes.button}>
           <Button
-            fullWidth
             variant="contained"
             color="primary"
+            endIcon={<BuildIcon />}
             onClick={handleFinalDescriptorDataSubmit}
           >
-            Click here to set the above descriptors
+            Build Template
           </Button>
         </div>
       </Grid>

@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(8),
   },
   paper: {
-    height: 400,
+    height: 470,
     width: 250,
     padding: 8,
     display: "flex",
@@ -21,13 +21,14 @@ const useStyles = makeStyles((theme) => ({
   },
   descriptor: {
     padding: 10,
+    margin: theme.spacing(1),
   },
   button: {
-    margin: theme.spacing(2),
+    marginTop: theme.spacing(1)
   },
   textField: {
-    margin: theme.spacing(2),
-    width: 200,
+    width: 220,
+    marginBottom: theme.spacing(3)
   },
 }));
 
@@ -37,6 +38,7 @@ const MultiListFromFile = (props) => {
   const [fieldName, setFieldName] = useState("");
   const [metric, setMetric] = useState("");
   const [delimeter, setDelimeter] = useState("");
+  const [value, setValue] = useState("");
   const [isDisabled, setDisabled] = useState(false);
 
   const handleFieldName = (event) => {
@@ -51,12 +53,17 @@ const MultiListFromFile = (props) => {
     setDelimeter(event.target.value);
   };
 
+  const handleValue = (event) => {
+    setValue(event.target.value);
+  };
+
   const handleSubmit = () => {
     let data = {
       id: props.id,
       Descriptor: props.descriptor,
       FieldName: fieldName,
       Metric: metric,
+      Value: value,
       Delimeter: delimeter,
       module: props.module
     };
@@ -95,6 +102,18 @@ const MultiListFromFile = (props) => {
             id="multi-list-from-file-metric"
             value={metric}
             onChange={handleMetric}
+            disabled={isDisabled}
+          />
+        </div>
+        <div className={classes.textField}>
+          <TextField
+            variant="outlined"
+            fullWidth
+            name="multiListFromFileValue"
+            label="Max Value"
+            id="multi-list-from-file-value"
+            value={value}
+            onChange={handleValue}
             disabled={isDisabled}
           />
         </div>

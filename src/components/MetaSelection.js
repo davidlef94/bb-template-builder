@@ -7,6 +7,7 @@ import Radio from "@material-ui/core/Radio";
 
 import InstantMeta from "./metaComponent/InstantMeta";
 import HanuMeta from "./metaComponent/HanuMeta";
+import BatchMeta from './metaComponent/BatchMeta';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -49,6 +50,10 @@ const MetaSelection = (props) => {
     metaComponent = (
       <HanuMeta onHandleFinalMetaChange={handleFinalMetaChange} />
     );
+  } else if (value === "Batch") {
+    metaComponent = (
+      <BatchMeta onHandleFinalMetaChange={handleFinalMetaChange} />
+    )
   }
 
   return (
@@ -107,6 +112,24 @@ const MetaSelection = (props) => {
               <div className={classes.typography}>
                 <Typography variant="subtitle1" gutterBottom align="center">
                   Email type integrations for sending job adverts via email
+                </Typography>
+              </div>
+            </Paper>
+          </Grid>
+          <Grid key={2} item>
+            <Paper className={classes.paper}>
+              <Typography variant="h6" gutterBottom align="center">
+                Batch
+              </Typography>
+              <Radio
+                checked={value === "Batch"}
+                onChange={handleMetaTypeChange}
+                value="Batch"
+                name="batch-radio-button"
+              />
+              <div className={classes.typography}>
+                <Typography variant="subtitle1" gutterBottom align="center">
+                  Batch integrations for sending job adverts to Batch AWS
                 </Typography>
               </div>
             </Paper>

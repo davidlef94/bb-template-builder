@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(8),
   },
   paper: {
-    height: 400,
+    height: 410,
     width: 250,
     padding: 6,
     display: "flex",
@@ -25,13 +25,14 @@ const useStyles = makeStyles((theme) => ({
   },
   descriptor: {
     padding: 10,
+    margin: theme.spacing(1),
   },
   button: {
-    margin: theme.spacing(2),
+    marginTop: theme.spacing(1),
   },
   textField: {
-    margin: theme.spacing(2),
-    width: 200,
+    width: 220,
+    marginBottom: theme.spacing(3)
   },
   formControl: {
     margin: theme.spacing(2),
@@ -65,7 +66,7 @@ const ConvertSalary = (props) => {
       Descriptor: props.descriptor,
       FieldName: fieldName,
       Currency: currency,
-      target: target,
+      Target: target,
       module: props.module
     };
     props.onHandleSaveDescriptor(data);

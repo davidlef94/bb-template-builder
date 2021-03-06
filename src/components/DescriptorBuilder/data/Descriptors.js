@@ -28,7 +28,7 @@ const Descriptors = [
     componentType: "DefaultTokenMapped",
   },
   {
-    descriptor: "start_date_format_check",
+    descriptor: "startdate_format_check",
     componentType: "FieldValue",
     label: "Date Format"
   },
@@ -241,7 +241,7 @@ const Descriptors = [
     componentType: "Basic",
   },
   {
-    descriptor: "mandatory_number_of_positions_check",
+    descriptor: "mandatory_number_of_positions",
     componentType: "Basic",
   },
   {
@@ -274,6 +274,10 @@ const Descriptors = [
   },
   {
     descriptor: "add",
+    componentType: "Basic",
+  },
+  {
+    descriptor: "experience_mapping",
     componentType: "Basic",
   },
 ];

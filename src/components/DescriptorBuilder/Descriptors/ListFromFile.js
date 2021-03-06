@@ -21,13 +21,14 @@ const useStyles = makeStyles((theme) => ({
   },
   descriptor: {
     padding: 10,
+    margin: theme.spacing(1),
   },
   button: {
-    margin: theme.spacing(2),
+    marginTop: theme.spacing(1)
   },
   textField: {
-    margin: theme.spacing(2),
-    width: 200,
+    width: 220,
+    marginBottom: theme.spacing(3)
   },
 }));
 

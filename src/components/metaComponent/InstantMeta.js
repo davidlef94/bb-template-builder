@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(8),
   },
   paper: {
-    height: 820,
+    height: 980,
     width: 600,
     padding: 40,
     display: "flex",
@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
   form: {
     width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(3),
+    padding: 10,
   },
   submit: {
     margin: theme.spacing(6, 0, 2),
@@ -43,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    width: 600,
+    width: 650,
     color: green[500],
   },
 }));
@@ -55,10 +56,10 @@ const InstantMeta = (props) => {
   const [boardId, setBoardId] = useState("");
   const [niceName, setNiceName] = useState("");
   const [templateName, setTemplateName] = useState("");
-  const [feedType, setFeedType] = useState("client feed");
+  const [feedType, setFeedType] = useState("Client Feed");
   const [supportHTML, setSupportHTML] = useState("yes");
   const [salaryBanding, setSalaryBanding] = useState("no");
-  const [contentType, setContentType] = useState("xml");
+  const [contentType, setContentType] = useState("text/xml");
   const [liveUrl, setLiveUrl] = useState("");
   const [stagingUrl, setStagingUrl] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
@@ -151,7 +152,7 @@ const InstantMeta = (props) => {
               Meta
             </Typography>
             <form className={classes.form} noValidate onSubmit={handleSubmit}>
-              <Grid container spacing={2}>
+              <Grid container spacing={4}>
                 <Grid item xs={12} sm={6}>
                   <TextField
                     name="jira-Ticket"
@@ -211,8 +212,8 @@ const InstantMeta = (props) => {
                       value={feedType}
                       onChange={handleFeedTypeChange}
                     >
-                      <MenuItem value={"client feed"}>Client Feed</MenuItem>
-                      <MenuItem value={"job board"}>Job Board</MenuItem>
+                      <MenuItem value={"Client Feed"}>Client Feed</MenuItem>
+                      <MenuItem value={"Job Board"}>Job Board</MenuItem>
                     </Select>
                   </FormControl>
                 </Grid>
@@ -228,7 +229,7 @@ const InstantMeta = (props) => {
                       onChange={handleHtmlSupportChange}
                     >
                       <MenuItem value={"yes"}>Yes</MenuItem>
-                      <MenuItem value={"No"}>No</MenuItem>
+                      <MenuItem value={"no"}>No</MenuItem>
                     </Select>
                   </FormControl>
                 </Grid>
@@ -259,8 +260,8 @@ const InstantMeta = (props) => {
                       value={contentType}
                       onChange={handleContentTypeChange}
                     >
-                      <MenuItem value={"xml"}>XML</MenuItem>
-                      <MenuItem value={"json"}>JSON</MenuItem>
+                      <MenuItem value={"text/xml"}>XML</MenuItem>
+                      <MenuItem value={"application/json"}>JSON</MenuItem>
                     </Select>
                   </FormControl>
                 </Grid>
